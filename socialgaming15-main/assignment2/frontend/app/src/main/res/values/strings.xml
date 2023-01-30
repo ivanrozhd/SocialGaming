@@ -1,0 +1,49 @@
+<resources>
+    <string name="app_name">LittleLarri</string>
+    <string name="health">Health</string>
+    <string name="Mood" />
+    <string name="mood">Mood</string>
+    <string name="inventory">Inventory</string>
+
+    <!--Alert Strings-->
+    <!--Buttons-->
+    <string name="alert_understood">OK</string>
+    <string name="alert_accept">Accept</string>
+    <string name="alert_reject">Reject</string>
+    <!--Error Warnings-->
+    <string name="alert_title_emptyInput">Empty input field</string>
+    <string name="alert_message_emptyInput">You missed a mandatory input field.</string>
+    <string name="alert_title_emailAlreadyExists">Could not register</string>
+    <string name="alert_message_emailAlreadyExists">A user with the E-mail "%s" already exists.</string>
+    <!--Trading Dialogs-->
+    <string name="alert_title_trade_request">New Trade Offer</string>
+    <string name="alert_title_trade_rejected">Trade Request rejected</string>
+    <string name="alert_title_trade_accepted">Trade Request accepted</string>
+    <string name="alert_title_trade_canceled">Trade was canceled</string>
+    <string name="alert_title_trade_completed">Trade completed</string>
+    <string name="alert_title_trade_error">Error</string>
+    <string name="alert_message_trade_request">%s wants to trade with you.</string>
+    <string name="alert_message_trade_rejected">%s has rejected your trade offer.\nPress OK to return to the menu.</string>
+    <string name="alert_message_trade_accepted">%s has accepted your trade offer.</string>
+    <string name="alert_message_trade_canceled">%s has canceled the trade.\nPress OK to return to the menu.</string>
+    <string name="alert_message_trade_completed">The items were exchanged and the new items were added to your inventory.</string>
+    <string name="alert_message_trade_error">Because of an error occurred the trade was canceled. Please try again and send a new trading request.</string>
+
+    <string name="alert_title_location_disabled">Location disabled</string>
+    <string name="alert_message_location_disabled">The location is currently disabled. For the app to work you need to activate the location setting.</string>
+
+    <string name="loading_dots">...</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="qr_code_status_waiting">Waiting for %1$s to accept the trading request.</string>
+    <string name="qr_code_status_accepted_other">%s has accepted your trading request.</string>
+    <string name="qr_code_status_accepted_you">You have accepted %s trading request.</string>
+    <string name="qr_code_explanation">Scan %1$s\'s QR-Code (by clicking on the scan button) or let %1$s scan your QR-Code.</string>
+    <string name="scan_qrcode">Scan QR-Code</string>
+    <string name="show_qrcode">Show QR-Code</string>
+
+    <string name="trade_button_default_text">Trade with %s</string>
+    <string name="trade_button_not_in_range_text">%s is to far away</string>
+
+    <string name="firebase_realtime_database_url">https://little-laerri-default-rtdb.europe-west1.firebasedatabase.app/</string>
+</resources>

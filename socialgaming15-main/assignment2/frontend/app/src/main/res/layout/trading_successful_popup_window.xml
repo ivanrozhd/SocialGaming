@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="350dp"
+    android:layout_height="500dp"
+    android:background="@drawable/profile_popup_bg">
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Trade Summary"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="You traded successfully with"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/nicknameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nickname_placeholder"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        android:textSize="20dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:text="Offer"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout9"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout9" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:text="Profit"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout8"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout8" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout9"
+        android:layout_width="135dp"
+        android:layout_height="180dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/card_bg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nicknameTextView">
+
+        <RelativeLayout
+            android:id="@+id/leftWaterLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/leftFoodLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/leftMedicineLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/leftWaterImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_water" />
+
+            <TextView
+                android:id="@+id/leftWaterAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/leftWaterImage"
+                android:layout_alignBottom="@+id/leftWaterImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="10"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/leftMedicineLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/leftBookLayout"
+            app:layout_constraintLeft_toRightOf="@id/leftWaterLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/leftMedicineImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_medicine" />
+
+            <TextView
+                android:id="@+id/leftMedicineAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/leftMedicineImage"
+                android:layout_alignBottom="@+id/leftMedicineImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/leftFoodLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/leftToyLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/leftBookLayout"
+            app:layout_constraintTop_toBottomOf="@id/leftWaterLayout">
+
+            <ImageView
+                android:id="@+id/leftFoodImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_food" />
+
+            <TextView
+                android:id="@+id/leftFoodAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/leftFoodImage"
+                android:layout_alignBottom="@+id/leftFoodImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/leftBookLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/leftCoinsLayout"
+            app:layout_constraintLeft_toRightOf="@id/leftFoodLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/leftMedicineLayout">
+
+            <ImageView
+                android:id="@+id/leftBookImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_book" />
+
+            <TextView
+                android:id="@+id/leftBookAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/leftBookImage"
+                android:layout_alignBottom="@+id/leftBookImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/leftToyLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/leftCoinsLayout"
+            app:layout_constraintTop_toBottomOf="@id/leftFoodLayout">
+
+            <ImageView
+                android:id="@+id/leftToyImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_toy" />
+
+            <TextView
+                android:id="@+id/leftToyAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/leftToyImage"
+                android:layout_alignBottom="@+id/leftToyImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/leftCoinsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/leftToyLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/leftBookLayout">
+
+            <ImageView
+                android:id="@+id/leftCoinsImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_coins" />
+
+            <TextView
+                android:id="@+id/leftCoinsAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/leftCoinsImage"
+                android:layout_alignBottom="@+id/leftCoinsImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout8"
+        android:layout_width="135dp"
+        android:layout_height="180dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/card_bg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nicknameTextView">
+
+        <RelativeLayout
+            android:id="@+id/rightWaterLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/rightFoodLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/rightMedicineLayout"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/rightWaterImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_water" />
+
+            <TextView
+                android:id="@+id/rightWaterAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/rightWaterImage"
+                android:layout_alignBottom="@+id/rightWaterImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rightMedicineLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/rightBookLayout"
+            app:layout_constraintLeft_toRightOf="@id/rightWaterLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/rightMedicineImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_medicine" />
+
+            <TextView
+                android:id="@+id/rightMedicineAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/rightMedicineImage"
+                android:layout_alignBottom="@+id/rightMedicineImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rightFoodLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/rightToyLayout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/rightBookLayout"
+            app:layout_constraintTop_toBottomOf="@id/rightWaterLayout">
+
+            <ImageView
+                android:id="@+id/rightFoodImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_food" />
+
+            <TextView
+                android:id="@+id/rightFoodAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/rightFoodImage"
+                android:layout_alignBottom="@+id/rightFoodImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rightBookLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toTopOf="@id/rightCoinsLayout"
+            app:layout_constraintLeft_toRightOf="@id/rightFoodLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rightMedicineLayout">
+
+            <ImageView
+                android:id="@+id/rightBookImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_book" />
+
+            <TextView
+                android:id="@+id/rightBookAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/rightBookImage"
+                android:layout_alignBottom="@+id/rightBookImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rightToyLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/rightCoinsLayout"
+            app:layout_constraintTop_toBottomOf="@id/rightFoodLayout">
+
+            <ImageView
+                android:id="@+id/rightToyImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_toy" />
+
+            <TextView
+                android:id="@+id/rightToyAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/rightToyImage"
+                android:layout_alignBottom="@+id/rightToyImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rightCoinsLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/rightToyLayout"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rightBookLayout">
+
+            <ImageView
+                android:id="@+id/rightCoinsImage"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:src="@drawable/image_coins" />
+
+            <TextView
+                android:id="@+id/rightCoinsAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/rightCoinsImage"
+                android:layout_alignBottom="@+id/rightCoinsImage"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center"
+                android:textSize="13dp" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/okButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:text="Ok"
+        android:paddingHorizontal="90dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toTopOf="@id/imageView2"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout8"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout9"
+        app:layout_constraintTop_toTopOf="@+id/constraintLayout8"
+        app:srcCompat="@drawable/arrows_left" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout8"
+        app:layout_constraintEnd_toStartOf="@+id/constraintLayout8"
+        app:layout_constraintStart_toEndOf="@+id/constraintLayout9"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:srcCompat="@drawable/arrows_right" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Every trade improves your mood!\nThis trade gave you "
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/moodBonusText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+ 20 + 5"
+        android:textColor="@color/white"
+        android:textSize="19dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView10"/>
+
+    <TextView
+        android:id="@+id/moodBonusText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(friendship bonus)\nextra mood!"
+        android:textColor="@color/white"
+        android:textSize="16dp"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/moodBonusText1" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

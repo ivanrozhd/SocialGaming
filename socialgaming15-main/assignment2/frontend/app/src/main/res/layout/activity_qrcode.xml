@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:gravity="center_horizontal"
+    tools:context=".activities.QRcodeActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/cancelButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel"
+            android:layout_gravity="right"/>
+
+        <TextView
+            android:id="@+id/statusText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/qr_code_status_waiting"/>
+
+        <TextView
+            android:id="@+id/explanationText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/qr_code_explanation"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/qr_output"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"/>
+
+        <com.budiyev.android.codescanner.CodeScannerView
+            android:id="@+id/scanner_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/scanButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/scan_qrcode"/>
+    </LinearLayout>
+
+</LinearLayout>

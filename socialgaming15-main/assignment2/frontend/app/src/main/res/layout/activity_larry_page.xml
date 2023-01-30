@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/larryRoot"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/larriPageLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:background="@drawable/gradient_list">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout10"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:background="@drawable/layout_bg"
+            android:padding="10dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="220dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="13dp"
+                android:ems="10"
+                android:fontFamily="serif"
+                android:singleLine="true"
+                android:text="loading..."
+                android:textSize="25sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/game_score"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/game_score"
+                android:layout_width="61dp"
+                android:layout_height="64dp"
+                android:background="@drawable/circular_view"
+                android:gravity="center"
+                android:padding="6dp"
+                android:text="..."
+                android:textColor="#fff"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <ImageButton
+            android:id="@+id/friendRequestsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/button_bg2"
+            android:padding="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/mail_icon" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="20dp"
+            android:scaleX="5"
+            android:scaleY="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout10" />
+
+        <TextView
+            android:id="@+id/health"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/health"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBar"
+            app:layout_constraintEnd_toEndOf="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@+id/progressBar"
+            app:layout_constraintTop_toTopOf="@+id/progressBar" />
+
+        <ProgressBar
+            android:id="@+id/progressBarMood"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="20dp"
+            android:scaleX="5"
+            android:scaleY="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar" />
+
+        <TextView
+            android:id="@+id/mood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mood"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBarMood"
+            app:layout_constraintEnd_toEndOf="@+id/progressBarMood"
+            app:layout_constraintStart_toStartOf="@+id/progressBarMood"
+            app:layout_constraintTop_toTopOf="@+id/progressBarMood" />
+
+        <ProgressBar
+            android:id="@+id/progressBarHunger"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="110dp"
+            android:layout_marginTop="20dp"
+            android:scaleX="5"
+            android:scaleY="5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBarMood" />
+
+        <TextView
+            android:id="@+id/hunger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hunger"
+            android:textSize="23sp"
+            app:layout_constraintBottom_toBottomOf="@+id/progressBarHunger"
+            app:layout_constraintEnd_toEndOf="@+id/progressBarHunger"
+            app:layout_constraintStart_toStartOf="@+id/progressBarHunger"
+            app:layout_constraintTop_toTopOf="@+id/progressBarHunger" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/layout_bg2"
+            android:padding="7dp"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout12"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/progressBar">
+
+            <ImageView
+                android:id="@+id/water"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@drawable/image_water"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/water_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/water"
+                app:layout_constraintEnd_toEndOf="@+id/water" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg2"
+            android:padding="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout11"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout13"
+            android:layout_marginRight="5dp">
+
+            <ImageView
+                android:id="@+id/pills"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@drawable/image_medicine"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pills_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/pills"
+                app:layout_constraintEnd_toEndOf="@+id/pills" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg2"
+            android:padding="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout12"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout14"
+            android:layout_marginRight="5dp">
+
+            <ImageView
+                android:id="@+id/food"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@drawable/image_food"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/pizza_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/food"
+                app:layout_constraintEnd_toEndOf="@+id/food" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg2"
+            android:padding="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout13"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout15"
+            android:layout_marginRight="5dp">
+
+            <ImageView
+                android:id="@+id/book"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@drawable/image_book"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/book_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/book"
+                app:layout_constraintEnd_toEndOf="@+id/book" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg2"
+            android:padding="7dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout14"
+            app:layout_constraintBottom_toTopOf="@id/constraintLayout16"
+            android:layout_marginRight="5dp">
+
+            <ImageView
+                android:id="@+id/toy"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@drawable/image_toy"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/toy_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/toy"
+                app:layout_constraintEnd_toEndOf="@+id/toy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/layout_bg2"
+            android:padding="7dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout15"
+            android:layout_marginBottom="70dp"
+            android:layout_marginRight="5dp">
+
+            <ImageView
+                android:id="@+id/coins"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:src="@drawable/image_coins"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/coins_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/coins"
+                app:layout_constraintEnd_toEndOf="@+id/coins" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/my_image_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:maxWidth="300dp"
+        android:adjustViewBounds="true"
+        android:maxHeight="300dp"/>
+
+    <include layout="@layout/menu_bar" />
+
+
+</RelativeLayout>

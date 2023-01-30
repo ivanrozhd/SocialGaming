@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeScreenActivity">
+
+
+
+    <Button
+        android:id="@+id/menuToInventory"
+        android:layout_width="102dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:text="inventory"
+        />
+
+    <Button
+        android:id="@+id/menuToLarri"
+        android:layout_width="102dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/menuToInventory"
+        android:text="Lärri"
+        android:backgroundTint="@color/teal_200"
+
+        />
+
+    <Button
+        android:id="@+id/menuToMap"
+        android:layout_width="102dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/menuToLarri"
+        android:text="Map"
+
+        />
+
+    <Button
+        android:id="@+id/menuToLeaderboard"
+        android:layout_width="102dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/menuToMap"
+        android:text="Leaderboard"
+
+        />
+
+</RelativeLayout>

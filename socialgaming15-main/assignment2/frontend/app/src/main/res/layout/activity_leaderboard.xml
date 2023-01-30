@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.LeaderboardActivity">
+
+    <Button
+        android:id="@+id/rankButton"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="42dp"
+        android:layout_marginTop="20dp"
+        android:text="Rank" />
+
+    <Button
+        android:id="@+id/friendsButton"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="207dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/teal_200"
+        android:text="Friends" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="70dp" />
+
+    <include
+        android:id="@+id/menu_bar"
+        layout="@layout/menu_bar" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/searchButton"
+        android:layout_width="101dp"
+        android:layout_height="91dp"
+        android:layout_above="@id/menu_bar"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="true"
+        app:srcCompat="@android:drawable/ic_search_category_default" />
+
+    <TextView
+        android:id="@+id/noResult_textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No results found"
+        android:textSize="20dp"
+        android:layout_centerInParent="true"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

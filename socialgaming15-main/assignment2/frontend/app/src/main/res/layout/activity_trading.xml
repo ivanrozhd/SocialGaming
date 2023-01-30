@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.TradingActivity"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="You're trading with"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nicknameTrader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="nickname placeholder"
+        android:maxWidth="400dp"
+        android:singleLine="true"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:textSize="30dp"
+        android:padding="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Negotiate with your trading partner and make a good deal! Tap on your resources to select or deselect them."
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/otherOffer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nicknameTrader" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/otherOffer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#6f00"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/myOffer"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <ImageButton
+            android:id="@+id/partnerOfferButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/face_sad"
+            android:background="@drawable/button_bg3_red"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/partnerOfferText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Offer of trading partner"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp" />
+
+        <RelativeLayout
+            android:id="@+id/waterPartnerOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/medicinePartnerOffer"
+            app:layout_constraintTop_toBottomOf="@id/partnerOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/waterPartnerOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_water" />
+
+            <TextView
+                android:id="@+id/waterPartnerOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/waterPartnerOfferImage"
+                android:layout_alignBottom="@+id/waterPartnerOfferImage"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/medicinePartnerOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/waterPartnerOffer"
+            app:layout_constraintEnd_toStartOf="@id/foodPartnerOffer"
+            app:layout_constraintTop_toBottomOf="@id/partnerOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/medicinePartnerOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_medicine" />
+
+            <TextView
+                android:id="@+id/medicinePartnerOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/medicinePartnerOfferImage"
+                android:layout_alignBottom="@+id/medicinePartnerOfferImage"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/foodPartnerOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/medicinePartnerOffer"
+            app:layout_constraintEnd_toStartOf="@id/bookPartnerOffer"
+            app:layout_constraintTop_toBottomOf="@id/partnerOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/foodPartnerOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_food" />
+
+            <TextView
+                android:id="@+id/foodPartnerOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/foodPartnerOfferImage"
+                android:layout_alignBottom="@+id/foodPartnerOfferImage"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bookPartnerOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/foodPartnerOffer"
+            app:layout_constraintEnd_toStartOf="@id/toyPartnerOffer"
+            app:layout_constraintTop_toBottomOf="@id/partnerOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/bookPartnerOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_book" />
+
+            <TextView
+                android:id="@+id/bookPartnerOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/bookPartnerOfferImage"
+                android:layout_alignBottom="@+id/bookPartnerOfferImage"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/toyPartnerOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/bookPartnerOffer"
+            app:layout_constraintEnd_toStartOf="@id/coinPartnerOffer"
+            app:layout_constraintTop_toBottomOf="@id/partnerOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/toyPartnerOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_toy" />
+
+            <TextView
+                android:id="@+id/toyPartnerOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/toyPartnerOfferImage"
+                android:layout_alignBottom="@+id/toyPartnerOfferImage"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/coinPartnerOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/toyPartnerOffer"
+            app:layout_constraintTop_toBottomOf="@id/partnerOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/partnerOfferButton"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/coinPartnerOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_coins" />
+
+            <TextView
+                android:id="@+id/coinPartnerOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/coinPartnerOfferImage"
+                android:layout_alignBottom="@+id/coinPartnerOfferImage"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myOffer"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="#60f0"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/myRessources"
+        android:layout_marginBottom="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            android:id="@+id/yourOfferText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Your offer"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"/>
+
+        <ImageButton
+            android:id="@+id/acceptOfferButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Button"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/face_happy"
+            android:background="@drawable/button_bg3_green"
+            android:padding="5dp"/>
+
+        <RelativeLayout
+            android:id="@+id/waterOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/medicineOffer"
+            app:layout_constraintTop_toBottomOf="@id/yourOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/waterOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_water"
+                android:clickable="true"/>
+
+            <TextView
+                android:id="@+id/waterOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/waterOfferImage"
+                android:layout_alignBottom="@+id/waterOfferImage"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/medicineOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/waterOffer"
+            app:layout_constraintEnd_toStartOf="@id/foodOffer"
+            app:layout_constraintTop_toBottomOf="@id/yourOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/medicineOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_medicine" />
+
+            <TextView
+                android:id="@+id/medicineOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/medicineOfferImage"
+                android:layout_alignBottom="@+id/medicineOfferImage"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="0dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/foodOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/medicineOffer"
+            app:layout_constraintEnd_toStartOf="@id/bookOffer"
+            app:layout_constraintTop_toBottomOf="@id/yourOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/foodOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_food" />
+
+            <TextView
+                android:id="@+id/foodOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/foodOfferImage"
+                android:layout_alignBottom="@+id/foodOfferImage"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bookOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/foodOffer"
+            app:layout_constraintEnd_toStartOf="@id/toyOffer"
+            app:layout_constraintTop_toBottomOf="@id/yourOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/bookOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_book" />
+
+            <TextView
+                android:id="@+id/bookOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/bookOfferImage"
+                android:layout_alignBottom="@+id/bookOfferImage"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/toyOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/bookOffer"
+            app:layout_constraintEnd_toStartOf="@id/coinOffer"
+            app:layout_constraintTop_toBottomOf="@id/yourOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/toyOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_toy" />
+
+            <TextView
+                android:id="@+id/toyOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/toyOfferImage"
+                android:layout_alignBottom="@+id/toyOfferImage"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/coinOffer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/toyOffer"
+            app:layout_constraintTop_toBottomOf="@id/yourOfferText"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/acceptOfferButton"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/coinOfferImage"
+                android:layout_width="55dp"
+                android:layout_height="55dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_coins" />
+
+            <TextView
+                android:id="@+id/coinOfferAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/coinOfferImage"
+                android:layout_alignBottom="@+id/coinOfferImage"
+                android:layout_marginEnd="6dp"
+                android:layout_marginBottom="1dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/myRessources"
+        android:layout_width="match_parent"
+
+        android:layout_height="0dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:background="#6aaa"
+        app:layout_constraintBottom_toTopOf="@+id/cancelNegotiationButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="percent"
+        app:layout_constraintHeight_percent="0.3"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/yourRessourcesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Your Resources"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/waterRessource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/medicineRessource"
+            app:layout_constraintTop_toBottomOf="@+id/yourRessourcesText"
+            app:layout_constraintBottom_toTopOf="@id/bookRessource"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/waterRessourceImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_water" />
+
+            <TextView
+                android:id="@+id/waterRessourceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/waterRessourceImage"
+                android:layout_alignBottom="@+id/waterRessourceImage"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="198"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/medicineRessource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/waterRessource"
+            app:layout_constraintEnd_toStartOf="@id/foodRessource"
+            app:layout_constraintTop_toBottomOf="@+id/yourRessourcesText"
+            app:layout_constraintBottom_toTopOf="@id/bookRessource"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/medicineRessourceImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_medicine" />
+
+            <TextView
+                android:id="@+id/medicineRessourceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/medicineRessourceImage"
+                android:layout_alignBottom="@+id/medicineRessourceImage"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="20"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/foodRessource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@+id/medicineRessource"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/yourRessourcesText"
+            app:layout_constraintBottom_toTopOf="@id/bookRessource"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/foodRessourceImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_food" />
+
+            <TextView
+                android:id="@+id/foodRessourceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/foodRessourceImage"
+                android:layout_alignBottom="@+id/foodRessourceImage"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="3"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/bookRessource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/toyRessource"
+            app:layout_constraintTop_toBottomOf="@+id/waterRessource"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/bookRessourceImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_book" />
+
+            <TextView
+                android:id="@+id/bookRessourceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/bookRessourceImage"
+                android:layout_alignBottom="@+id/bookRessourceImage"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="89"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/toyRessource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/bookRessource"
+            app:layout_constraintEnd_toStartOf="@id/coinRessource"
+            app:layout_constraintTop_toBottomOf="@+id/waterRessource"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/toyRessourceImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_toy" />
+
+            <TextView
+                android:id="@+id/toyRessourceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/toyRessourceImage"
+                android:layout_alignBottom="@+id/toyRessourceImage"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="0"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/coinRessource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/toyRessource"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/waterRessource"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:clickable="true">
+
+            <ImageView
+                android:id="@+id/coinRessourceImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:src="@drawable/image_coins" />
+
+            <TextView
+                android:id="@+id/coinRessourceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/coinRessourceImage"
+                android:layout_alignBottom="@+id/coinRessourceImage"
+                android:layout_marginEnd="9dp"
+                android:layout_marginBottom="4dp"
+                android:background="@drawable/text_bg"
+                android:padding="2dp"
+                android:text="19"
+                android:textAlignment="center" />
+        </RelativeLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <Button
+        android:id="@+id/cancelNegotiationButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cancel Negotiation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
